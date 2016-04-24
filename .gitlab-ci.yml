@@ -14,21 +14,21 @@ test-php55_job:
   type: test
   image: php:5.5
   script:
-  - php --version; php -d memory_limit=-1 vendor/bin/phpunit --colors --debug --configuration ./tests/phpunit.xml --coverage-text
+  - php55 --version; php55 -d memory_limit=-1 vendor/bin/phpunit --colors --debug --configuration ./tests/phpunit.xml --coverage-text
   allow_failure: false
 
 test-php56_job:
   type: test
   image: php:5.6
   script:
-  - php --version; php -d memory_limit=-1 vendor/bin/phpunit --colors --debug --configuration ./tests/phpunit.xml --coverage-text
+  - php56 --version; php56 -d memory_limit=-1 vendor/bin/phpunit --colors --debug --configuration ./tests/phpunit.xml --coverage-text
   allow_failure: false
 
 test-php70_job:
   type: test
   image: php:7.0
   script:
-  - php --version; php -d memory_limit=-1 vendor/bin/phpunit --colors --debug --configuration ./tests/phpunit.xml --coverage-text
+  - php70 --version; php70 -d memory_limit=-1 vendor/bin/phpunit --colors --debug --configuration ./tests/phpunit.xml --coverage-text
   allow_failure: false
 
 
