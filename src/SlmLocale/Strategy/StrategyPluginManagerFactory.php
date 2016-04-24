@@ -1,16 +1,12 @@
 <?php
 /**
- * BB's Zend Framework 2 Components
+ * Slm/Locale fork from https://github.com/juriansluiman/SlmLocale
  *
- * AdminModule
- *
- * @package   [MyApplication]
- * @package   BB's Zend Framework 2 Components
- * @package   AdminModule
+ * @package   Slm/Locale
  * @author    Björn Bartels <coding@bjoernbartels.earth>
- * @link      https://gitlab.bjoernbartels.earth/groups/zf2
- * @license   http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
- * @copyright copyright (c) 2016 Björn Bartels <coding@bjoernbartels.earth>
+ * @link      https://gitlab.bjoernbartels.earth/zf2/SlmLocale
+ * @link      https://bjoernbartels.earth
+ * @link      https://github.com/juriansluiman/SlmLocale
  */
 
 namespace SlmLocale\Strategy;
@@ -30,7 +26,6 @@ class StrategyPluginManagerFactory implements FactoryInterface
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        //$realServiceLocator = $serviceLocator->getServiceLocator();
         return new StrategyPluginManager($serviceLocator);
     }
 }
