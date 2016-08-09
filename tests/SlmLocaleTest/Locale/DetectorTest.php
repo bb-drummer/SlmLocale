@@ -183,6 +183,7 @@ class DetectorTest extends TestCase
     public function testStrategyWithHighestPriorityWins()
     {
         $detector  = new Detector;
+        $detector->setDefault("Foo");
         $this->setEventManager($detector);
 
         $strategy1 = $this->createMock('SlmLocale\Strategy\AbstractStrategy', array('detect'));
