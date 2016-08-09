@@ -162,7 +162,7 @@ class DetectorFactoryTest extends TestCase
         ));
         $em = $sl->get('EventManager');
 
-        $strategy = $this->getMock('SlmLocale\Strategy\StrategyInterface', array('attach', 'detach'));
+        $strategy = $this->createMock('SlmLocale\Strategy\StrategyInterface', array('attach', 'detach'));
         $strategy->expects($this->once())
                  ->method('attach')
                  ->with($em, 100);
@@ -179,7 +179,7 @@ class DetectorFactoryTest extends TestCase
                 array('name' => 'TestStrategy', 'options' => 'Foo')
             ),
         ));
-        $strategy = $this->getMock('SlmLocale\Strategy\StrategyInterface', array('attach', 'detach', 'setOptions'));
+        $strategy = $this->createMock('SlmLocale\Strategy\StrategyInterface', array('attach', 'detach', 'setOptions'));
         $strategy->expects($this->once())
                  ->method('setOptions')
                  ->with('Foo');
