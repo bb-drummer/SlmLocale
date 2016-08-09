@@ -194,8 +194,8 @@ class DetectorTest extends TestCase
         $strategy2->expects($this->never())
                   ->method('detect');
 
-        $detector->addStrategy($strategy1, 10);
-        $detector->addStrategy($strategy2, 1);
+        $detector->addStrategy($strategy1, 1);
+        $detector->addStrategy($strategy2, 10);
 
         $locale = $detector->detect(new Request, new Response);
         $this->assertEquals('Foo', $locale);
