@@ -4,6 +4,7 @@
 before_script:
 - curl -sS https://getcomposer.org/installer | php
 - php composer.phar --version
+- php -d memory_limit=-1 composer.phar install
 
 # define types/stages
 types:
