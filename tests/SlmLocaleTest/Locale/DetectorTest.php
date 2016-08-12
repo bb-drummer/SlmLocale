@@ -182,23 +182,28 @@ class DetectorTest extends TestCase
 
     public function testStrategyWithHighestPriorityWins()
     {
-        $detector  = new Detector;
-        $detector->setDefault("Foo");
+		$detector  = new Detector;
         $this->setEventManager($detector);
 
-        $strategy1 = $this->createMock('SlmLocale\Strategy\AbstractStrategy', array('detect'));
+        $strategy1 = $this->getMockBuilder('SlmLocale\Strategy\AbstractStrategy')
+                          ->setMethods(array('detect'))
+                          ->getMockForAbstractClass();
         $strategy1->expects($this->once())
                   ->method('detect')
                   ->will($this->returnValue('Foo'));
 
-        $strategy2 = $this->createMock('SlmLocale\Strategy\AbstractStrategy', array('detect'));
+        $strategy2 = $this->getMockBuilder('SlmLocale\Strategy\AbstractStrategy')
+                          ->setMethods(array('detect'))
+                          ->getMockForAbstractClass();
         $strategy2->expects($this->never())
                   ->method('detect');
 
         $detector->addStrategy($strategy1, 10);
         $detector->addStrategy($strategy2, 1);
 
-        $locale = $detector->detect(new Request, new Response);
+        $request = new Request;
+        $response = new Response;
+        $locale = $detector->detect($request, $response);
         $this->assertEquals('Foo', $locale);
     }
 
