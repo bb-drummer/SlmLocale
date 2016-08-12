@@ -15,6 +15,9 @@ build:
         php: '7.0'
         timezone: 'Europe/Berlin'
     tests:
+        before:
+            - php -m
+            - php -d memory_limit=-1 composer.phar install
         override:
             -
                 command: './vendor/bin/phpunit -c ./tests --coverage-clover=/home/scrutinizer/build/slmlocale.clover'
