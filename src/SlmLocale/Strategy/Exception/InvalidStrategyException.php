@@ -40,7 +40,6 @@
 
 namespace SlmLocale\Strategy\Exception;
 
-use InvalidArgumentException;
 use SlmLocale\Exception\ExceptionInterface;
 
 class InvalidStrategyException
