@@ -17,8 +17,8 @@ build:
     tests:
         override:
             -
-                command: './vendor/bin/phpunit -c ./tests --coverage-clover=slmlocale.clover'
+                command: './vendor/bin/phpunit -c ./tests --coverage-clover=/home/scrutinizer/build/slmlocale.clover'
                 coverage:
-                    file: 'slmlocale.clover'
+                    file: '/home/scrutinizer/build/slmlocale.clover'
                     format: 'php-clover'
 
