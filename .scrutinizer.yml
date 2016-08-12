@@ -1,0 +1,24 @@
+checks:
+    php: true
+filter:
+    paths:
+        - src/*
+    excluded_paths:
+        - test/*
+        - vendor/*
+        - public/*
+        - puphpet/*
+coding_style:
+    php: {  }
+build:
+    environment:
+        php: '7.0'
+        timezone: 'Europe/Berlin'
+    tests:
+        override:
+            -
+                command: './vendor/bin/phpunit -c ./module/Application/test --coverage-clover=slmlocale.clover'
+                coverage:
+                    file: 'slmlocale.clover'
+                    format: 'php-clover'
+
