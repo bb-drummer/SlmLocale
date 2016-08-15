@@ -18,10 +18,12 @@ build:
         before:
             - php -m
             - phpunit --version
+            - wget http://getcomposer.org/composer.phar
+            - php composer.phar install
         override:
             -
-                command: './vendor/bin/phpunit -c ./tests --coverage-clover=/home/scrutinizer/build/slmlocale.clover'
+                command: 'phpunit -c ./tests/phpunit.xml --coverage-clover=slmlocale.clover'
                 coverage:
-                    file: '/home/scrutinizer/build/slmlocale.clover'
+                    file: 'slmlocale.clover'
                     format: 'php-clover'
 
