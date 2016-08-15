@@ -17,6 +17,7 @@ build:
     tests:
         before:
             - php -m
+            - phpunit --version
             - composer install --no-interaction
         override:
             -
