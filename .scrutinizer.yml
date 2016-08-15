@@ -18,7 +18,6 @@ build:
         before:
             - php -m
             - phpunit --version
-            - composer install --no-interaction
         override:
             -
                 command: './vendor/bin/phpunit -c ./tests --coverage-clover=/home/scrutinizer/build/slmlocale.clover'
