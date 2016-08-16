@@ -29,7 +29,7 @@
   "suggest" : {
     "zendframework/zend-mvc" : "For using the router in the UriPath strategy"
   },
-  "type" : "zend-module",
+  "type" : "library",
   "homepage" : "https://github.com/juriansluiman/SlmLocale",
   "authors" : [ {
     "name" : "Jurian Sluiman",
